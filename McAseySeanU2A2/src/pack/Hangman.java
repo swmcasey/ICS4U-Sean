@@ -1,3 +1,9 @@
+/*
+Sean McAsey
+2017-10-18
+
+No unoriginal content but book titles.
+ */
 package pack;
 
 import java.util.ArrayList;
