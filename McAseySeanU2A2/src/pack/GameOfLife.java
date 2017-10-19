@@ -102,8 +102,8 @@ public class GameOfLife {
 			} catch (NumberFormatException error) {} // the error message is not only in the case of a format error, so this just proceeds to the message
 			
 		// give error message
-			System.out.println("This many cells cannot fit in the dimensions of the grid, or is not a positive\n"
-					+ "integer. The grid only accommodates "+(x*y)+" cells. Please try again."); //x*y will result in the amount of cells elements
+			System.out.println("This many cells cannot fit in the dimensions of the grid, or the input is not\n"
+					+ "a positive integer. The grid only accommodates "+(x*y)+" cells. Please try again."); //x*y will result in the amount of cells elements
 		}
 		
 		
@@ -207,6 +207,7 @@ public class GameOfLife {
 						}
 						
 					} else { //otherwise (if it's not alive) run through the condition for dead cells:
+						
 						if (consecutiveCells == 3) { //if there are exactly 3 living cells around it,
 							cells1[i][o] = true; //make it be living too
 						}

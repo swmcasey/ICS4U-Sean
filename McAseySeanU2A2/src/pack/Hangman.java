@@ -60,7 +60,7 @@ public class Hangman {
 			truePhraseArray[i] = a[which].charAt(i) + "";
 		}
 
-		String[] hangedMan = { "\n  ☻", "\n/", "|", "\\", "\n  |", "\n/", "  \\" };
+		String[] hangedMan = { "\n ☻", "\n/", "|", "\\", "\n |", "\n/", "  \\" };
 		String[] blanks = new String[truePhraseArray.length];
 		ArrayList<String> wrongs = new ArrayList<String>();
 		wrongs.add("Nothing, yet.");
