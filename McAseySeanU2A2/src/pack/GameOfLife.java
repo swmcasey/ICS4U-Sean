@@ -32,7 +32,7 @@ public class GameOfLife {
 		
 		System.out.println("Welcome to Conway's Game of Life as programmed by Sean McAsey!\n\n"
 				+ "This game is an automatic simulation based on subsequent turns. Randomly placed cells on a grid are\n"
-				+ "all alive (■) or dead (◯). If alive, a cell will survive into the next turn if bordered by two or three living cells.\n"
+				+ "all alive (■) or dead (□). If alive, a cell will survive into the next turn if bordered by two or three living cells.\n"
 				+ "Otherwise, it will die. If a cell is not alive and is surrounded by exactly three neighbours, it will come to\n"
 				+ "life the in the next turn. Otherwise, it will continue to not be alive.\n"
 				+ "Choose an amount of randomly-distributed cells to start with below, and then enter any input to continue to\n"
