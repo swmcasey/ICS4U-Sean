@@ -13,6 +13,18 @@ import java.util.Scanner;
 public class GameOfLife {
 	public static void main(String[] args) {
 		
+		for(int i = 0;i > 10;i++) {
+			if(i>0) {
+			System.out.print("+ ");
+			}
+			double o = Math.random();
+			if(o>0.5) {
+				System.out.print("2 ");
+				continue;
+			}
+			System.out.print("3 ");
+		}
+		
 		//declaring variables to be used soon
 		
 		int x = 20; //width, height of grid -- variable and not constantly 20x20 for purposes of testing and fun
