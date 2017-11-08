@@ -26,7 +26,7 @@ public class Hangman {
 		String[] animals = { "Wolverine", "Tortoise", "Barnacle", "Sponge", "Anemone", "Termite", "Goldfish",
 				"Hippopotamus", "Wombat", "Orangutan", "Chimpanzee", "Finch", "Albatross", "Human", "Giraffe",
 				"Aardvark" };
-		String[] countries = { "Canada", "Kyrgyzstan", "Mauritania", "South Sudan", "Finland", "Argentina", "Palestine",
+		String[] countries = { "Tazikistan", "Kyrgyzstan", "Mauritania", "South Sudan", "Finland", "Argentina", "Palestine",
 				"Uruguay", "Armenia", "Jordan", "Catalonia", "Malta", "Belarus", "Botswana", "Angola", "Cyprus" };
 		System.out.println("HANGMAN\n" + "by Sean McAsey\n" + "\n"
 				+ "Guess letters (case-insensitive) of the hidden word one at a time.\n"
@@ -60,7 +60,7 @@ public class Hangman {
 			truePhraseArray[i] = a[which].charAt(i) + "";
 		}
 
-		String[] hangedMan = { "\n ☻", "\n/", "|", "\\", "\n |", "\n/", "  \\" };
+		String[] hangedMan = { "\n ☻", "\n/", "|", "\\", "\n |", "\n/", " \\" };
 		String[] blanks = new String[truePhraseArray.length];
 		ArrayList<String> wrongs = new ArrayList<String>();
 		wrongs.add("Nothing, yet.");
@@ -77,6 +77,7 @@ public class Hangman {
 
 		System.out.println("Guess your first letter.");
 		while (guesses > 0) {
+			System.out.println("\n========================================================================");
 			System.out.print("\nYou have incorrectly guessed:  ");
 			System.out.print(wrongs.get(0));
 			for (int i = 1; i < wrongs.size(); i++) {

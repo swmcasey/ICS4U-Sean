@@ -151,52 +151,39 @@ public class GameOfLife {
 					int consecutiveCells = 0; //start counting consecutive cells to this one
 					
 					
-					//these try/if/catch blocks check each element to the right, left or in the same position of this element
-					//in its row and the rows above and below (excluding this element itself). if there is no element there
-					//(this element is on an edge), it just does not count a new consecutive cell. iff there is an alive cell,
-					//it will add to the consecutive cell count.
-					try{
-						if(cells[i-1][o-1]){
-							consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
-					try{
-						if(cells[i-1][o]){
-							consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
-					try{
-						if(cells[i-1][o+1]){
-							consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
+					//if there is a living cell in a consecutive position that exists, 
+					//it adds it to the total of consecutive cells.
 					
-					try{
-						if(cells[i][o-1]){
+					//row above, left to right
+					if(i>0&&o>0&&cells[i-1][o-1]){
 							consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
-					try{
-						if(cells[i][o+1]){
+					}
+					if(i>0&&cells[i-1][o]){
+							consecutiveCells++;
+					}
+					if(i>0&&o<x-1&&cells[i-1][o+1]){
+							consecutiveCells++;
+					}
+					
+					//same row, left and right
+					if(o>0&&cells[i][o-1]){
+							consecutiveCells++;
+					}
+					if(o<x-1&&cells[i][o+1]){
 						consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
+					}
 					
-					try{
-						if(cells[i+1][o-1]){
+
+					//row below, left to right
+					if(i<y-1&&o>0&&cells[i+1][o-1]){
 							consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
-					try{
-						if(cells[i+1][o]){
+					}
+					if(i<y-1&&cells[i+1][o]){
 							consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
-					try{
-						if(cells[i+1][o+1]){
+					}
+					if(i<y-1&&o<x-1&&cells[i+1][o+1]){
 							consecutiveCells++;
-						}
-					} catch (ArrayIndexOutOfBoundsException error){}
+					}
 					
 					
 					
