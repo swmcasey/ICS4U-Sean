@@ -4,33 +4,109 @@ import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Triplets {
-  public static void main(String [] args) {
-    ArrayList<String> aStart = new ArrayList<String>();
-    aStart.add("There once was a cat with a ball,");
-    aStart.add("There once sat a dog on a wall,");
-    aStart.add("A baron attended a ball,");
-    aStart.add("A working man sat in a mall,");
-    aStart.add("A fellow once tried to recall,");
-    ArrayList<String> bStart = new ArrayList<String>();
-    bStart.add("A cat once was chasing a rat,");
-    bStart.add("A rat once was chasing a cat,");
-    bStart.add("Brendan imagined a bat,");
-    bStart.add("");
-    ArrayList<String> mid = new ArrayList<String>();
-    mid.add("who wanted to catch 'em all,");
-    mid.add("who sundered an evil cabal,");
-    mid.add("who's cheeky, with serious gall,");
-    mid.add("who wished they were called Danny Wall,");
-    mid.add("who redid the floor of his hall,");
-    mid.add("whose phone got a startling call,");
-    ArrayList<String> aEnd = new ArrayList<String>();
-    aEnd.add("and then suffered a great big fall.");
-    aEnd.add("but he was a Scot, most of all.");
-    aEnd.add("\"But alas,\" he said, \"I am too tall.\"");
-    aEnd.add("and then the boys played some baseball.");
-    aEnd.add("with 4-phenyl-2-heptanol.");
-    aEnd.add("and loved nothing more than dodgeball.");
-    ArrayList<String> bEnd = new ArrayList<String>();
-    bEnd.add("");
-  }
+	public static void main(String[] args) {
+		// This program will use a dynamic arrays
+		ArrayList<String> nouns = new ArrayList<String>();
+		nouns.add("cat");
+		nouns.add("dog");
+		nouns.add("horse");
+		nouns.add("goat");
+		nouns.add("fish");
+		nouns.add("frog");
+		nouns.add("bird");
+
+		ArrayList<String> verbs = new ArrayList<String>();
+		verbs.add("slept upon");
+		verbs.add("jumped atop");
+		verbs.add("raced against");
+		verbs.add("ran far from");
+		verbs.add("played pranks on");
+		verbs.add("conversed with");
+		verbs.add("forgot of");
+
+		ArrayList<String> verbs1 = new ArrayList<String>();
+		verbs1.add("devour");
+		verbs1.add("fight with");
+		verbs1.add("jump over");
+		verbs1.add("race with");
+		verbs1.add("run into");
+		verbs1.add("bamboozle");
+		verbs1.add("play cards with");
+		verbs1.add("elope with");
+
+		ArrayList<String> rhymingNouns = new ArrayList<String>();
+		rhymingNouns.add("mouse");
+		rhymingNouns.add("blouse");
+		rhymingNouns.add("grouse");
+		rhymingNouns.add("house");
+		rhymingNouns.add("spouse");
+		rhymingNouns.add("house");
+		rhymingNouns.add("louse");
+
+		//B-section nouns for ABA form. Only used once, so no removal (and no ArrayList) is necessary.
+		String[] nonRhymingNouns = { "cat", "hat", "rat", "bat", "that", "gnat" };
+
+		//Adjectives to add a syllable to line 1. Only used once, so no removal (and no ArrayList) is necessary.
+		String[] adjectives = { "tall ", "big ", "cool ", "mean ", "red ", "blue " };
+		
+		//Beginning to final sentence. Only used once, so no removal (and no ArrayList) is necessary.
+		String[] conjunctions = { "But it then ", "And then it ", "That's why it "};
+
+		String noun, conjunction, adjective;
+		String verb1, verb2, verb3;
+		String rhymingNoun1, rhymingNoun2, rhymingNoun3;
+		int randomNum;
+
+		// get a random noun from the nouns array
+		// use .size() to get the # of elements
+		randomNum = (int) (Math.random() * nouns.size());
+		noun = nouns.get(randomNum);
+
+		// get the first random verb from the verbs array &
+		// remove from ArrayList
+		randomNum = (int) (Math.random() * verbs.size());
+		verb1 = verbs.get(randomNum);
+		verbs.remove(randomNum);
+
+		// get the second random verb from verbs array and remove it
+		randomNum = (int) (Math.random() * verbs1.size());
+		verb2 = verbs1.get(randomNum);
+		verbs1.remove(randomNum);
+		
+		// get the final random verb from verbs array and remove it
+		randomNum = (int) (Math.random() * verbs1.size());
+		verb3 = verbs.get(randomNum);
+		verbs.remove(randomNum);
+
+		// get the first rhyming noun and remove it
+		randomNum = (int) (Math.random() * rhymingNouns.size());
+		rhymingNoun1 = rhymingNouns.get(randomNum);
+		rhymingNouns.remove(randomNum);
+
+		// get the second rhyming noun and remove it
+		randomNum = (int) (Math.random() * rhymingNouns.size());
+			// replace it with a non-rhyming noun or don't, at random, to switch between AAA/ABA forms
+			if (ThreadLocalRandom.current().nextBoolean()) {
+				rhymingNoun2 = rhymingNouns.get(randomNum);
+				rhymingNouns.remove(randomNum);
+			} else {
+				rhymingNoun2 = nonRhymingNouns[(int) (Math.random() * nonRhymingNouns.length)];
+			}
+
+		// get the final rhyming noun
+		randomNum = (int) (Math.random() * rhymingNouns.size());
+		rhymingNoun3 = rhymingNouns.get(randomNum);
+		
+		// get the start of the last sentence
+		randomNum = (int) (Math.random() * conjunctions.length);
+		conjunction = conjunctions[randomNum];
+
+		// get the adjective
+		randomNum = (int) (Math.random() * adjectives.length);
+		adjective = adjectives[randomNum];
+
+		// Display the poem
+		System.out.println("The " + noun + " " + verb1 + " a " + adjective + rhymingNoun1 + "\n" + "So it could " + verb2 + " a "
+				+ rhymingNoun2 + "\n" + conjunction + verb3 + " a " + rhymingNoun3);
+	}
 }
