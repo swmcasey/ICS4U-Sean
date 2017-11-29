@@ -2,12 +2,14 @@ package a1;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CarTester {
 
 	public static void main(String[] args) {
+		
 		Scanner a = new Scanner(System.in);
-		boolean done = false, isUsed = false, flag = false;
+		boolean isUsed = false, flag = false;
 		String make1 = "", model1 = "", make = "", model = "", colour = "";
 		int price = 0, year = 0;
 		System.out.println("Please enter the make of the first car:");
@@ -74,6 +76,17 @@ public class CarTester {
 		// Car1 barks friendly, Car2 barks angry
 		Car1.barkFriendly();
 		Car2.barkAngry();
+		System.out.println("Press enter to honk");
+		while(true){
+			if(a.nextLine()!=null){
+				if(ThreadLocalRandom.current().nextBoolean()){
+					Car1.honk();
+					continue;
+				}
+				Car2.honk();
+			}
+		}
+		
 	}
 
 }

@@ -12,8 +12,8 @@ public class Car {
 
 	  //constructors
 	  public Car() {
-	    carModel = "Ford";
-	    carMake = "Model T";
+	    carMake = "Ford";
+	    carModel = "Model T";
 	    carColour = "Black";
 	    carYear = 1908;
 	    carPrice = 825;
@@ -43,15 +43,15 @@ public class Car {
 	  }
 
 	  public void barkFriendly() {
-	    System.out.println("Vroom! Vroom!");
+	    System.out.println("The "+carColour+" "+carMake+" "+carModel+" says: \""+"Vroom! Vroom!\"");
 	  }
 
 	  public void barkAngry() {
-	    System.out.println("SKRRT! SKRRRRRRT!");
+	    System.out.println("The "+carColour+" "+carMake+" "+carModel+" says: \""+"SKRRRT! SKRRRRRRT!\"");
 	  }
 
 	  public void honk() {
-	    System.out.println("HONK");
+	    System.out.println("The "+carColour+" "+carMake+" "+carModel+" says: \""+"HONK\"");
 	  }
 	  
 	  //method to display all info of the Car
