@@ -1,7 +1,5 @@
 package a1;
 
-import java.text.DecimalFormat;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MyBankMachine {
@@ -14,7 +12,7 @@ public class MyBankMachine {
 		boolean flag = false;
 		Scanner s = new Scanner(System.in);
 
-		System.out.println("Please enter your bank's name.");
+		System.out.println("Please enter your bank's name."); //takes any string for bank name, only used in exit
 		b = s.nextLine();
 		System.out.println("Please enter your initial deposit.");
 		while (!flag) {
@@ -134,11 +132,12 @@ public class MyBankMachine {
 						System.out.println("The input was not a valid integer. Please try again.");
 					}
 				} while (!flag);
-
 				main.addInterest(x, y, z);
 				
 			}
-			if (i == 4) {
+			
+			if (i == 4) { //exit option
+				s.close();
 				System.out.println("Thank you for using " + main.name + ". Have a nice day!");
 				System.exit(0);
 			}

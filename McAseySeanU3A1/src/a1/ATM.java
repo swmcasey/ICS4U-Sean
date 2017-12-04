@@ -23,13 +23,14 @@ public class ATM {
 
 	public void addInterest(int x, double y, double z) {
 		if (y == 0) {
-			balance = balance * Math.pow(Math.E, x/y * z); // calculates continuously compounded interest by yearly rate if compounding period is 0
+			balance = balance * Math.pow(Math.E, (x/365 * z)); // calculates continuously compounded interest by yearly rate if compounding period is 0
+		} else{
+			balance = balance * Math.pow((1 + z * y / 365), x / y); // calculates interest compounded every y days by annual rate
 		}
-		balance = balance * Math.pow((1 + z * y / 365), x / y); // calculates interest compounded every y days by annual rate
 	}
 
 	public String getBalance() { // returns balance (kept as a full double for specificity with interest) as dollars/cents
-		return format.format(balance);
+		return ""+format.format(balance);
 	}
 
 }
