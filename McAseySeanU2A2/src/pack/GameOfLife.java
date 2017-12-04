@@ -63,7 +63,7 @@ public class GameOfLife {
 						Integer.parseInt("whoopsie doodle :^)"); //trigger an error to reach the error message
 					}
 					
-					x = Integer.parseInt(size.split("x")[0]); //make an array by splitting around the "x," of which there should be only one,
+					x = Integer.parseInt(size.split("x")[0]); //make an array by splitting around each "x," of which there should be only one,
 					y = Integer.parseInt(size.split("x")[1]); //and convert the elements to x and y values to form the grid
 					
 					if(size.split(" ").length>1){//if there is more than one x,
@@ -161,7 +161,7 @@ public class GameOfLife {
 					if(i>0&&cells[i-1][o]){
 							consecutiveCells++;
 					}
-					if(i>0&&o<x-1&&cells[i-1][o+1]){
+					if(i>0&&o<(y-1)&&cells[i-1][o+1]){
 							consecutiveCells++;
 					}
 					
@@ -169,19 +169,19 @@ public class GameOfLife {
 					if(o>0&&cells[i][o-1]){
 							consecutiveCells++;
 					}
-					if(o<x-1&&cells[i][o+1]){
+					if(o<(y-1)&&cells[i][o+1]){
 						consecutiveCells++;
 					}
 					
 
 					//row below, left to right
-					if(i<y-1&&o>0&&cells[i+1][o-1]){
+					if(i<(x-1)&&o>0&&cells[i+1][o-1]){
 							consecutiveCells++;
 					}
-					if(i<y-1&&cells[i+1][o]){
+					if(i<(x-1)&&cells[i+1][o]){
 							consecutiveCells++;
 					}
-					if(i<y-1&&o<x-1&&cells[i+1][o+1]){
+					if(i<(x-1)&&o<(y-1)&&cells[i+1][o+1]){
 							consecutiveCells++;
 					}
 					

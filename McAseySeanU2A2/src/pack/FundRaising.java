@@ -21,8 +21,8 @@ public class FundRaising {
 		
 		Double[] totals = new Double[4]; //used to sum grand total by taking totals of $0.25 donations, $0.50 donations, etc
 		
-		while (true) {
-			System.out.println("Which school is doing fundraising?\n" + "0 - Catholic Central\n" + "1 - Holy Cross\n"
+		while (true) {//the following is in a loop so that the user can continually add more to the data
+			System.out.println("Which school is doing fundraising?\n" + "0 - Catholic Central\n" + "1 - Holy Cross\n" 
 					+ "2 - John Paul II\n" + "3 - Mother Teresa\n" + "4 - Regina Mundi\n" + "5 - St. Joeseph (sic)\n"
 					+ "6 - St. Mary\n" + "7 - St. Thomas Aquinas\n" + "9 - EXIT");
 			while (true) {
@@ -97,7 +97,7 @@ public class FundRaising {
 				for (int o = 0; o < 8; o++) {
 						System.out.print("$"+money[i][o]);
 						System.out.print("	");
-						if(!tabLocations[i][o]&tabbedLines[o]){
+						if(!tabLocations[i][o]&tabbedLines[i]){
 							System.out.print("	");
 					}
 				}
