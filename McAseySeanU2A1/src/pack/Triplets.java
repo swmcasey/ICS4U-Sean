@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Triplets {
 	public static void main(String[] args) {
+		while(true){
 		// This program will use a dynamic arrays
 		ArrayList<String> nouns = new ArrayList<String>();
 		nouns.add("cat");
@@ -75,8 +76,8 @@ public class Triplets {
 		
 		// get the final random verb from verbs array and remove it
 		randomNum = (int) (Math.random() * verbs1.size());
-		verb3 = verbs.get(randomNum);
-		verbs.remove(randomNum);
+		verb3 = verbs1.get(randomNum);
+		verbs1.remove(randomNum);
 
 		// get the first rhyming noun and remove it
 		randomNum = (int) (Math.random() * rhymingNouns.size());
@@ -108,5 +109,10 @@ public class Triplets {
 		// Display the poem
 		System.out.println("The " + noun + " " + verb1 + " a " + adjective + rhymingNoun1 + "\n" + "So it could " + verb2 + " a "
 				+ rhymingNoun2 + "\n" + conjunction + verb3 + " a " + rhymingNoun3);
+		try {
+			Thread.sleep(800);
+		} catch (InterruptedException e) {
+		}
+	}
 	}
 }
